@@ -8,25 +8,25 @@ import SectionIntro from "@/components/SectionIntro";
 const projects = [
   {
     title: "CampusGig",
-    status: "Featured",
+    status: "In Development",
     description:
-      "A dedicated freelancing platform connecting university students with small businesses for affordable, field-relevant services. It includes real-time messaging, authentication, service listings, project matching, and a review system designed to help students build experience while businesses access skilled talent.",
+      "A dedicated freelancing platform connecting university students with small businesses for affordable, field-relevant services. It includes real-time messaging, authentication, service listings, project matching, and a review system designed to help students build experience while businesses access skilled talent. The project is not yet publicly hosted and the source code is not yet available on GitHub.",
     stack: ["Next.js", "Tailwind CSS", "Convex", "TypeScript"],
     primaryLabel: "Discuss Project",
     primaryHref: "mailto:gentlenke@gmail.com?subject=CampusGig%20Project%20Inquiry",
-    secondaryLabel: "GitHub Profile",
-    secondaryHref: "https://github.com/NkeGently",
+    secondaryLabel: "Private for Now",
+    secondaryHref: "#",
   },
   {
     title: "Personal Portfolio Website",
-    status: "Featured",
+    status: "Live",
     description:
-      "A professional portfolio experience built around a bespoke dark navy and gold design system, strong SEO foundations, fluid Framer Motion interactions, and an integrated AI-powered experience. The project showcases both visual polish and full-stack implementation discipline.",
+      "A professional portfolio experience built around a bespoke dark navy and gold design system, strong SEO foundations, fluid Framer Motion interactions, and a polished single-page presentation. The project highlights both visual design quality and full-stack implementation discipline.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    primaryLabel: "View CV",
-    primaryHref: "/cv.pdf",
-    secondaryLabel: "GitHub Profile",
-    secondaryHref: "https://github.com/NkeGently",
+    primaryLabel: "Live Site",
+    primaryHref: "https://gentle-folio.vercel.app",
+    secondaryLabel: "GitHub Repo",
+    secondaryHref: "https://github.com/NkeGently/gentle-folio",
   },
   {
     title: "Project Name",
@@ -88,7 +88,8 @@ export default function Projects() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={project.primaryHref}
-                  target={project.primaryHref === "/cv.pdf" ? "_blank" : undefined}
+                  target={project.primaryHref.startsWith("http") ? "_blank" : undefined}
+                  rel={project.primaryHref.startsWith("http") ? "noreferrer" : undefined}
                   className="glass-button glass-button-gold"
                 >
                   <span className="relative z-10">{project.primaryLabel}</span>
